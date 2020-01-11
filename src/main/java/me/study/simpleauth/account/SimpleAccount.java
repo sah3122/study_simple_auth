@@ -18,7 +18,8 @@ public class SimpleAccount implements Serializable {
 
     private String password;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
     private Set<AccountRole> roles;
 
     public void encodePassword(PasswordEncoder passwordEncoder) {
