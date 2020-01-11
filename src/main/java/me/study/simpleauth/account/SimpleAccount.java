@@ -3,10 +3,7 @@ package me.study.simpleauth.account;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -21,6 +18,7 @@ public class SimpleAccount implements Serializable {
 
     private String password;
 
+    @ElementCollection
     private Set<AccountRole> roles;
 
     public void encodePassword(PasswordEncoder passwordEncoder) {
