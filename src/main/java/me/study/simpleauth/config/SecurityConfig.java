@@ -21,16 +21,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user1").password(passwordEncoder.encode("password")).roles("USER")
-                .and()
-                .withUser("user2").password(passwordEncoder.encode("password")).roles("USER")
-                .and()
-                .withUser("admin").password(passwordEncoder.encode("password")).roles("ADMIN");
-    }
-
-    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .mvcMatchers("/", "/login").permitAll()
