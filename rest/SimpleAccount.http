@@ -14,11 +14,9 @@ Accept: application/json
 ###
 
 POST http://localhost:8080/oauth/token
-Authorization: Basic bXlBcHA6cGFzcw==
+Authorization: Basic bXlBcHA6cGFzcw
+Content-Type: application/x-www-form-urlencoded
 
-{
-  "username": "dongchul",
-  "password" : "password",
-  "grant_type" : "password"
-}
+grant_type=password&username=dongchul&password=password
+
 ###
