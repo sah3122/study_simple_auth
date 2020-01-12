@@ -12,6 +12,12 @@ spring:
     host: localshot
     port: 6379
 
+simple:
+  oauth2:
+    clientId: myApp
+    clientSecret: pass
+
+
 logging:
   level:
     root: debug
